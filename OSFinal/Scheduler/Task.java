@@ -81,6 +81,9 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{name='" + name + "', type='" + type + "', startTime=" + startTime + ", endTime=" + endTime + '}';
+        return String.format("Task name: %s\nType: %s\nStart Time: %s\nEnd Time: %s\n",
+                name, type,
+                startTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
+                endTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")));
     }
 }
